@@ -1,11 +1,10 @@
 import "./App.css";
-import { Box } from "@mui/material";
-import {CssBaseline} from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme, CssBaseline, Box } from "@mui/material";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import EducationTimeline from "./components/Timeline";
-// import T
+import ProjectList from "./components/ProjectList";
+import Skills from "./components/Skills";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,8 +21,8 @@ const darkTheme = createTheme({
       primary: '#9da5bd',
       secondary: '#ffffff',
       dark: '#3a4c7a',
-      light: '#ffffff',
-      disabled: '#8dc1ff'
+      light: '#8dc1ff',
+      disabled: '#040c24'
     }
   },
 });
@@ -38,13 +37,15 @@ function App() {
             display: "flex",
             flexDirection: "column",
             minHeight: "100vh",
-            marginTop: 0,
+            minWidth: '100vw',
             bgcolor: 'primary.main'
           }}
         >
           <Navbar/>
           <HeroSection />
           <EducationTimeline />
+          <Skills/>
+          <ProjectList />
           
         </Box>
       </ThemeProvider>
