@@ -1,12 +1,9 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { Grid, Link } from "@mui/material";
+import { Grid, Link, AppBar, Typography, Toolbar } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav>
       <AppBar
@@ -28,39 +25,39 @@ function Navbar() {
             sx={{
               flexGrow: 1,
               textAlign: "left",
-              "&:hover": { color: "text.disabled" },
+              "&:hover": { color: "text.light" },
             }}
           >
             SG
           </Typography>
           <Grid sx={{display: 'flex', alignItems:'center', height: '100%'}}>
-            <Link sx={{mx:1.5, "&:hover": { color: "text.disabled" }}}>
+            <Link variant="button" href="https://github.com/Shreyash0368" target="_blank" sx={{mx:1.5, "&:hover": { color: "text.light" }}}>
               <GitHubIcon fontSize="large" />
             </Link>
-            <Link sx={{mx: 1.5,"&:hover": { color: "text.disabled" }}}>
+            <Link variant="button" href="https://www.linkedin.com/in/shreyash-gupta-b96189263/" target="_blank" sx={{mx: 1.5,"&:hover": { color: "text.light" }}}>
               <LinkedInIcon fontSize="large" />
             </Link>
             <Link
               variant="button"
               color="text.primary"
-              href="#"
-              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.disabled" } }}
+              href="#education"
+              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
             >
               Education
             </Link>
             <Link
               variant="button"
               color="text.primary"
-              href="#"
-              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.disabled" } }}
+              href="#skills"
+              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
             >
               Skills
             </Link>
             <Link
               variant="button"
               color="text.primary"
-              href="#"
-              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.disabled" } }}
+              href="#projects"
+              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
             >
               Projects
             </Link>
@@ -71,4 +68,3 @@ function Navbar() {
   );
 }
 
-export default Navbar;
