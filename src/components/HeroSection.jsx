@@ -7,23 +7,22 @@ function HeroSection() {
       sx={{
         display: "flex",
         justifyContent: "center",
-        // alignItems: 'center',
         marginTop: "3rem",
-        minHeight: "75vh",
-        backgroundColor: "primary.main",
+        minHeight: "65vh",
+        // backgroundColor: "primary.main",
         boxSizing: "border-box",
       }}
     >
       <Box sx={{ padding: 2, margin: "2 auto" }}>
         <Typography sx={{ fontSize: "4rem", color: "text.light" }}>
           Hello There,
-          <br /> Im Shreyash Gupta
+          <br /> I am Shreyash Gupta
         </Typography>
         <Typography sx={{ fontSize: "2.1rem", color: "text.light" }}>
           Aspiring Software Developer
         </Typography>
         <Typography
-          sx={{ fontSize: "1.3rem", color: "text.primary", marginTop: "1rem" }}
+          sx={{ fontSize: "1.3rem", color: "text.primary", marginTop: "1rem", padding: "10px" }}
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
           reiciendis in doloribus, voluptas repellendus cupiditate temporibus
