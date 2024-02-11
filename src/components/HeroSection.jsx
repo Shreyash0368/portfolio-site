@@ -9,7 +9,6 @@ function HeroSection() {
         justifyContent: "center",
         marginTop: "3rem",
         minHeight: "65vh",
-        // backgroundColor: "primary.main",
         boxSizing: "border-box",
       }}
     >
@@ -18,23 +17,10 @@ function HeroSection() {
           Hello There,
           <br /> I am Shreyash Gupta
         </Typography>
-        <Typography sx={{ fontSize: "2.1rem", color: "text.light" }}>
-          Aspiring Software Developer
-        </Typography>
-        <Typography
-          sx={{ fontSize: "1.3rem", color: "text.primary", marginTop: "1rem", padding: "10px" }}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          reiciendis in doloribus, voluptas repellendus cupiditate temporibus
-          vitae, labore vero quibusdam accusantium aliquam eligendi
-          exercitationem necessitatibus. Earum minus, illum molestiae porro
-          fugit exercitationem sapiente consequuntur, blanditiis molestias
-          praesentium quae amet ipsum consectetur veniam, aperiam itaque iure
-          aut. Incidunt aliquid sequi ab totam tenetur voluptatum nostrum aut
-          harum quo numquam perferendis reprehenderit officia obcaecati commodi
-          consequuntur illum qui, cum ut. Eos, dolores.
-        </Typography>
-        <Button sx={{my: '2rem', borderWidth: '2px'}} variant="outlined" color="buttonCustom">
+        <Typography sx={{ fontSize: "2.1rem", color: "text.light", my: '2rem' }}>
+        Aspiring Software Developer, Currently Pursuing BTech in Information Technology at Madhav Institute of Technology and Science.
+        </Typography>        
+        <Button sx={{my: '4rem', borderWidth: '2px'}} variant="outlined" href="/resume/Shreyash_Gupta_Resume.pdf" download color="buttonCustom">
           Resume
         </Button>
       </Box>

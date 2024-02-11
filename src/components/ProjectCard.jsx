@@ -9,13 +9,16 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  CardActions,
+  Link
 } from "@mui/material";
 
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function ProjectCard({ project }) {
-  const {title, description, images} = project;
+  const { title, description, images, github} = project;
   const [isOpen, setIsOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -43,6 +46,16 @@ export default function ProjectCard({ project }) {
             {description}
           </Typography>
         </CardContent>
+        <CardActions>
+          <Link
+            variant="button"
+            href= {github}
+            target="_blank"
+            sx={{ mx: 1.5, "&:hover": { color: "text.light" } }}
+          >
+            <GitHubIcon fontSize="large" />
+          </Link>
+        </CardActions>
       </Card>
 
       <Dialog open={isOpen} onClose={handleLightboxClose}>
@@ -64,7 +77,9 @@ export default function ProjectCard({ project }) {
           >
             <KeyboardArrowRightIcon />
           </Button>
-          <Button onClick={handleLightboxClose} sx={{color:"text.light"}}>Close</Button>
+          <Button onClick={handleLightboxClose} sx={{ color: "text.light" }}>
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
     </>

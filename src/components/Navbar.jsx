@@ -4,6 +4,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Navbar() {
+  const onButtonClick = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    element.scrollIntoView({behavior: "smooth"});
+  }
   return (
     <nav>
       <AppBar
@@ -39,8 +44,8 @@ export default function Navbar() {
             </Link>
             <Link
               variant="button"
-              color="text.primary"
-              href="#education"
+              color="text.primary"              
+              onClick = {(e) => {onButtonClick(e, "education")}}
               sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
             >
               Education
@@ -48,7 +53,7 @@ export default function Navbar() {
             <Link
               variant="button"
               color="text.primary"
-              href="#skills"
+              onClick = {(e) => {onButtonClick(e, "skills")}}
               sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
             >
               Skills
@@ -56,10 +61,18 @@ export default function Navbar() {
             <Link
               variant="button"
               color="text.primary"
-              href="#projects"
+              onClick = {(e) => {onButtonClick(e, "projects")}}
               sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
             >
               Projects
+            </Link>
+            <Link
+              variant="button"
+              color="text.primary"
+              onClick = {(e) => {onButtonClick(e, "contact-me")}}
+              sx={{ my: 1, mx: 1.5, "&:hover": { color: "text.light" } }}
+            >
+              Contact Me
             </Link>
           </Grid>
         </Toolbar>
