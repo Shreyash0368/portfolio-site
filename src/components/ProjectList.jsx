@@ -16,7 +16,7 @@ export default function ProjectList() {
       <Grid container spacing={3} padding={5} justifyContent="center">
         {projects.map((project) => {
           return (
-            <Grid item xs={6} md={4} key={project.title} >
+            <Grid item xs={12} md={4} key={project.title} >
               <ProjectCard project={project} />
             </Grid>
           );
