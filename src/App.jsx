@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import EducationTimeline from "./components/Timeline";
 import ProjectList from "./components/ProjectList";
 import Skills from "./components/Skills";
+import ContactMe from "./components/ContactMe";
 
 const darkTheme = createTheme({
   palette: {
@@ -46,7 +47,7 @@ function App() {
           <EducationTimeline />
           <Skills/>
           <ProjectList />
-          
+          <ContactMe />          
         </Box>
       </ThemeProvider>
     </>
