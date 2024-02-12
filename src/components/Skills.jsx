@@ -31,7 +31,7 @@ export default function Skills() {
         {skills.map((skill) => {
           return (
             <Grid item key={skill} xs={5} md={3}>
-              <Paper elevation={3} sx={{ minHeight: 20 }}>
+              <Paper elevation={3} sx={{ minHeight: 20, color: "white" }}>
                 {skill}
               </Paper>
             </Grid>

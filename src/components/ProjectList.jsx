@@ -1,11 +1,11 @@
 import React from "react";
 import projects from "../assets/projectDetails";
 import ProjectCard from "./ProjectCard";
-import {Typography , Grid, Box} from "@mui/material";
+import { Typography, Grid} from "@mui/material";
 
 export default function ProjectList() {
   return (
-    <Box>
+    <>
       <Typography
         variant="h2"
         sx={{ color: "text.light", my: 3 }}
@@ -13,15 +13,21 @@ export default function ProjectList() {
       >
         Projects
       </Typography>
-      <Grid container spacing={3} padding={5} justifyContent="center">
-        {projects.map((project) => {
+      <Grid
+        container
+        spacing={3}
+        justifyContent="center"
+        alignItems="center"        
+        padding={4}
+      >
+        {projects.map(project => {
           return (
-            <Grid item xs={12} md={4} key={project.title} >
-              <ProjectCard project={project} />
+            <Grid item xs={12} md={3} key={project.title}>
+              <ProjectCard project={project}/>
             </Grid>
-          );
+          )
         })}
       </Grid>
-    </Box>
+    </>
   );
 }

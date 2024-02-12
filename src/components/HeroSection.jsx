@@ -3,7 +3,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 function HeroSection() {
   return (
-    <Box
+    <Container
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -24,7 +24,7 @@ function HeroSection() {
           Resume
         </Button>
       </Box>
-    </Box>
+    </Container>
   );
 }
 

@@ -39,7 +39,7 @@ export default function ProjectCard({ project }) {
           sx={{ cursor: "pointer", height: 200, objectFit: "cover" }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{color: "text.light"}}>
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -51,9 +51,9 @@ export default function ProjectCard({ project }) {
             variant="button"
             href= {github}
             target="_blank"
-            sx={{ mx: 1.5, "&:hover": { color: "text.light" } }}
+            sx={{ mx: 1.5 }}
           >
-            <GitHubIcon fontSize="large" />
+            <GitHubIcon fontSize="large" sx={{color: "white", "&:hover": { color: "text.light" }}} />
           </Link>
         </CardActions>
       </Card>
