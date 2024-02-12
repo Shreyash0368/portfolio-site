@@ -22,11 +22,15 @@ function ResponsiveAppBar() {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (id) => {
+  const scroll = (id) => {
     id = id.toLowerCase();
-    console.log(id);
-    const element = document.getElementById(id);
-    element.scrollIntoView({ behavior: "smooth" });
+      console.log(id);
+      const element = document.getElementById(id);
+      element.scrollIntoView({ behavior: "smooth" });
+      handleCloseNavMenu();
+  }
+
+  const handleCloseNavMenu = () => {    
     setAnchorElNav(null);
   };
 
@@ -59,6 +63,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
+              onDoubleClick={handleCloseNavMenu}
               color="inherit"
             >
               <MenuIcon />
@@ -82,7 +87,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
+                <MenuItem key={page} onClick={() => scroll(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
