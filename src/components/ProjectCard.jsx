@@ -17,24 +17,20 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 
 export default function ProjectCard({ project }) {
-  const { title, description, images, github, video} = project;
+  const { title, description, image, github, video} = project;
   const [isOpen, setIsOpen] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
 
   const handleImageClick = () => setIsOpen(true);
   const handleLightboxClose = () => setIsOpen(false);
   const handleLightboxOpen = () => setIsOpen(true);
-
-  const handleNextImage = () => setImageIndex(imageIndex + 1);
-  const handlePreviousImage = () => setImageIndex(imageIndex - 1);
 
   return (
     <>
       <Card sx={{ maxWidth: 350 }}>
         <CardMedia
           component="img"
-          image={images[imageIndex].src}
-          alt={images[imageIndex].alt}
+          image={image.src}
+          alt={image.alt}
           onClick={handleImageClick}
           sx={{ cursor: "pointer", height: 200, objectFit: "cover" }}
         />
