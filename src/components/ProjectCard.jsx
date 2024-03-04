@@ -13,17 +13,17 @@ import {
   Link
 } from "@mui/material";
 
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 
 export default function ProjectCard({ project }) {
-  const { title, description, images, github} = project;
+  const { title, description, images, github, video} = project;
   const [isOpen, setIsOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
 
   const handleImageClick = () => setIsOpen(true);
   const handleLightboxClose = () => setIsOpen(false);
+  const handleLightboxOpen = () => setIsOpen(true);
 
   const handleNextImage = () => setImageIndex(imageIndex + 1);
   const handlePreviousImage = () => setImageIndex(imageIndex - 1);
@@ -55,28 +55,18 @@ export default function ProjectCard({ project }) {
           >
             <GitHubIcon fontSize="large" sx={{color: "white", "&:hover": { color: "text.light" }}} />
           </Link>
+          <Button onClick={handleLightboxOpen}>
+            <OndemandVideoIcon fontSize="large" sx={{color: "white", "&:hover": { color: "text.light" }}} />
+          </Button>
         </CardActions>
       </Card>
 
-      <Dialog open={isOpen} onClose={handleLightboxClose}>
-        <DialogTitle>{images[imageIndex].alt}</DialogTitle>
-        <DialogContent>
-          <img
-            src={images[imageIndex].src}
-            alt={images[imageIndex].alt}
-            style={{ maxWidth: "100%" }}
-          />
+      <Dialog open={isOpen} onClose={handleLightboxClose} maxWidth="md">
+        <DialogTitle>{"Demonstartion Video"}</DialogTitle>
+        <DialogContent style={{display: "flex"}}>         
+          <video style={{height: "100%", width: "100%"}} src={video} controls autoPlay muted loop></video>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handlePreviousImage} disabled={imageIndex === 0}>
-            <KeyboardArrowLeftIcon />
-          </Button>
-          <Button
-            onClick={handleNextImage}
-            disabled={imageIndex === images.length - 1}
-          >
-            <KeyboardArrowRightIcon />
-          </Button>
+        <DialogActions>          
           <Button onClick={handleLightboxClose} sx={{ color: "text.light" }}>
             Close
           </Button>
