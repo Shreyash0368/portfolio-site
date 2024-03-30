@@ -29,14 +29,14 @@ function ContactMe() {
         </Typography>
       </Grid>
       <Grid item xs={12} display="flex" justifyContent="center">
-        <IconButton href="mailto:shreyashgpt0503@gmail.com">
-          <EmailIcon />
+        <IconButton href="mailto:shreyashgpt0503@gmail.com" size="large">
+          <EmailIcon fontSize="inherit"/>
         </IconButton>
-        <IconButton href="https://github.com/Shreyash0368" target="_blank">
-          <GitHubIcon />
+        <IconButton href="https://github.com/Shreyash0368" target="_blank" size="large">
+          <GitHubIcon fontSize="inherit"/>
         </IconButton>
-        <IconButton href="https://www.linkedin.com/in/shreyash-gupta-b96189263/" target="_blank">
-          <LinkedInIcon />
+        <IconButton href="https://www.linkedin.com/in/shreyash-gupta-b96189263/" target="_blank" size="large">
+          <LinkedInIcon fontSize="inherit"/>
         </IconButton>
       </Grid>
     </Grid>
