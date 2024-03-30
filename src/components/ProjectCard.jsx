@@ -10,15 +10,17 @@ import {
   DialogContent,
   DialogTitle,
   CardActions,
-  Link
+  Link,
+  makeStyles,
 } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 
 export default function ProjectCard({ project }) {
-  const { title, description, image, github, video} = project;
+  const { title, description, image, github, video, youtube } = project;
   const [isOpen, setIsOpen] = useState(false);
+  const ytLink = `https://www.youtube.com/embed/${youtube}`;
 
   const handleImageClick = () => setIsOpen(true);
   const handleLightboxClose = () => setIsOpen(false);
@@ -35,7 +37,12 @@ export default function ProjectCard({ project }) {
           sx={{ cursor: "pointer", height: 200, objectFit: "cover" }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{color: "text.light"}}>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ color: "text.light" }}
+          >
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -43,26 +50,45 @@ export default function ProjectCard({ project }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Link
-            variant="button"
-            href= {github}
-            target="_blank"
-            sx={{ mx: 1.5 }}
-          >
-            <GitHubIcon fontSize="large" sx={{color: "white", "&:hover": { color: "text.light" }}} />
+          <Link variant="button" href={github} target="_blank" sx={{ mx: 1.5 }}>
+            <GitHubIcon
+              fontSize="large"
+              sx={{ color: "white", "&:hover": { color: "text.light" } }}
+            />
           </Link>
           <Button onClick={handleLightboxOpen}>
-            <OndemandVideoIcon fontSize="large" sx={{color: "white", "&:hover": { color: "text.light" }}} />
+            <OndemandVideoIcon
+              fontSize="large"
+              sx={{ color: "white", "&:hover": { color: "text.light" } }}
+            />
           </Button>
         </CardActions>
       </Card>
 
-      <Dialog open={isOpen} onClose={handleLightboxClose} maxWidth="md">
+      <Dialog
+        open={isOpen}
+        onClose={handleLightboxClose}
+        maxWidth="md"
+        fullWidth
+      >
         <DialogTitle>{"Demonstartion Video"}</DialogTitle>
-        <DialogContent style={{display: "flex"}}>         
-          <video style={{height: "100%", width: "100%"}} src={video} controls autoPlay muted loop></video>
+        <DialogContent
+          style={{
+            width: "100%",
+            height: "35rem",
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        >
+          <iframe
+            width="100%"
+            height="100%" /* Base height for tablet/laptop */
+            src={ytLink}
+            frameborder="0"
+            allowFullScreen
+          ></iframe>
         </DialogContent>
-        <DialogActions>          
+        <DialogActions>
           <Button onClick={handleLightboxClose} sx={{ color: "text.light" }}>
             Close
           </Button>
