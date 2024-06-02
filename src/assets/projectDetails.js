@@ -19,10 +19,10 @@ const projects = [
     title: "Excel-Clone",
     description:
       "A simple excel clone clone providing basic CRUD functionalities, support for multiple pages, local storage as well as UI enhancements regarding the fonts and more",
-    image: {src : "images/excel-clone.png", alt: "excel clone page"},
+    image: { src: "images/excel-clone.png", alt: "excel clone page" },
     youtube: "gzqk1bmCsbY",
-    github:
-      "https://github.com/Shreyash0368/mini-projects/tree/main/ExcelClone",
+    github: "https://github.com/Shreyash0368/Excel-Clone",
+    website: "https://shreyash0368.github.io/Excel-Clone/",
   },
 ];
 
