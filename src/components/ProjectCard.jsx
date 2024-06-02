@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Button,
   Card,
@@ -11,30 +11,42 @@ import {
   DialogTitle,
   CardActions,
   Link,
-  makeStyles,
 } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
+import LanguageIcon from '@mui/icons-material/Language';
+import useIntersectionObserver from "../hooks/intersectionObserver";
 
-export default function ProjectCard({ project }) {
-  const { title, description, image, github, video, youtube } = project;
+export default function ProjectCard({ project, delay = 0}) {
+  const { title, description, image, github, video, youtube, website } = project;
   const [isOpen, setIsOpen] = useState(false);
   const ytLink = `https://www.youtube.com/embed/${youtube}`;
+  const ref = useRef(null);
+  const {isVisible} = useIntersectionObserver(ref);
+  console.log(isVisible);
 
   const handleImageClick = () => setIsOpen(true);
   const handleLightboxClose = () => setIsOpen(false);
   const handleLightboxOpen = () => setIsOpen(true);
 
+
   return (
-    <>
-      <Card sx={{ maxWidth: 350 }}>
+    <div
+      ref={ref}
+      className={
+        isVisible ? "show" : `hide move-${delay % 2 ? "left" : "right"}`
+      }
+      style={{ "--animation-delay": `${1500 + delay * 120}ms` }}
+    >
+      <Card sx={{ maxWidth: 350, minWidth: 300 }}>
         <CardMedia
           component="img"
           image={image.src}
           alt={image.alt}
           onClick={handleImageClick}
           sx={{ cursor: "pointer", height: 200, objectFit: "cover" }}
+          loading="lazy"
         />
         <CardContent>
           <Typography
@@ -50,18 +62,24 @@ export default function ProjectCard({ project }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Link variant="button" href={github} target="_blank" sx={{ mx: 1.5 }}>
+          {github && <Link variant="button" href={github} target="_blank" sx={{ mx: 1.5 }}>
             <GitHubIcon
               fontSize="large"
               sx={{ color: "white", "&:hover": { color: "text.light" } }}
             />
-          </Link>
-          <Button onClick={handleLightboxOpen}>
+          </Link>}
+          {youtube && <Button onClick={handleLightboxOpen}>
             <OndemandVideoIcon
               fontSize="large"
               sx={{ color: "white", "&:hover": { color: "text.light" } }}
             />
-          </Button>
+          </Button>}
+          {website && <Link variant="button" href={website} target="_blank" sx={{ mx: 1.5 }}>
+            <LanguageIcon
+              fontSize="large"
+              sx={{ color: "white", "&:hover": { color: "text.light" } }}
+            />
+          </Link>}
         </CardActions>
       </Card>
 
@@ -76,8 +94,8 @@ export default function ProjectCard({ project }) {
           style={{
             width: "100%",
             height: "35rem",
-            display: 'flex',
-            justifyContent: 'center'
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           <iframe
@@ -94,6 +112,6 @@ export default function ProjectCard({ project }) {
           </Button>
         </DialogActions>
       </Dialog>
-    </>
+    </div>
   );
 }
