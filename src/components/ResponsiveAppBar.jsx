@@ -13,7 +13,13 @@ import MenuItem from "@mui/material/MenuItem";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-const pages = ["Education", "Skills", "Projects", "Contact-Me"];
+const pages = [
+  [ "Education", "Education" ],
+  [ "Skills",  "Skills" ],
+  [ "Projects",  "Projects" ],
+  [ "Contact Me",  "Contact-Me" ]
+];
+
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -24,18 +30,18 @@ function ResponsiveAppBar() {
 
   const scroll = (id) => {
     id = id.toLowerCase();
-      console.log(id);
-      const element = document.getElementById(id);
-      element.scrollIntoView({ behavior: "smooth" });
-      handleCloseNavMenu();
-  }
+    console.log(id);
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth" });
+    handleCloseNavMenu();
+  };
 
-  const handleCloseNavMenu = () => {    
+  const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -87,8 +93,8 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={() => scroll(page)}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page[0]} onClick={() => scroll(page[1])}>
+                  <Typography textAlign="center">{page[0]}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -114,8 +120,8 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={() => scroll(page)}
+                key={page[0]}
+                onClick={() => scroll(page[1])}
                 sx={{
                   my: 2,
                   color: "white",
@@ -123,7 +129,7 @@ function ResponsiveAppBar() {
                   "&:hover": { color: "text.light" },
                 }}
               >
-                {page}
+                {page[0]}
               </Button>
             ))}
           </Box>
