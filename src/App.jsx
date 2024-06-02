@@ -5,11 +5,11 @@ import {
   CssBaseline,
   Box 
 } from "@mui/material";
-import HeroSection from "./components/HeroSection";
-import EducationTimeline from "./components/Timeline";
-import ProjectList from "./components/ProjectList";
-import Skills from "./components/Skills";
-import ContactMe from "./components/ContactMe";
+import HeroSection from "./sections/HeroSection";
+import EducationTimeline from "./sections/Timeline";
+import ProjectList from "./sections/ProjectList";
+import Skills from "./sections/Skills";
+import ContactMe from "./sections/ContactMe";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 const darkTheme = createTheme({
@@ -38,7 +38,7 @@ function App() {
     <>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <Box sx={{width:"100vw", backgroundColor: "primary.main" }}>
+        <Box sx={{width:"100vw"}}>
           <ResponsiveAppBar />
           <HeroSection />
           <EducationTimeline />
