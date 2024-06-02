@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
 import IntroText from "./IntroText";
-import useViewportWidth from "../hooks/useViewPortWidth";
+import useViewportWidth from "../hooks/useViewportWidth";
 
 export default function HeroText({ intro }) {
   let viewportWidth = useViewportWidth();

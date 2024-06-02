@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import useIntersectionObserver from "../hooks/intersectionObserver";
 import { Paper } from "@mui/material";
-import useViewportWidth from "../hooks/useViewPortWidth";
+import useViewportWidth from "../hooks/useViewportWidth";
 
 export default function AnimatedSkillCard({ skill, delay }) {
   const ref = useRef(null);

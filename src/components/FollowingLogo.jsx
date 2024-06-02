@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../App.css";
 import useIntersectionObserver from "../hooks/intersectionObserver";
-import useViewportWidth from "../hooks/useViewPortWidth";
+import useViewportWidth from "../hooks/useViewportWidth";
 
 export default function FollowingLogo({ logoSrc }) {
   const ref = useRef(null);
