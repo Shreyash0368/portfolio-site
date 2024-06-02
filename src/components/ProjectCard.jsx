@@ -24,7 +24,6 @@ export default function ProjectCard({ project, delay = 0}) {
   const ytLink = `https://www.youtube.com/embed/${youtube}`;
   const ref = useRef(null);
   const {isVisible} = useIntersectionObserver(ref);
-  console.log(isVisible);
 
   const handleImageClick = () => setIsOpen(true);
   const handleLightboxClose = () => setIsOpen(false);
