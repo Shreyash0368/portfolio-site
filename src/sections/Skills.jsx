@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Paper, Typography } from "@mui/material";
+import AnimatedSkillCard from "../components/AnimatedSkillCard";
 
 const skills = [
   "Java",
@@ -13,6 +14,8 @@ const skills = [
   "Material UI",
   "Data Strucures ",
   "Algorithms",
+  "Redux",
+  "Firebase",
 ];
 
 export default function Skills() {
@@ -24,16 +27,24 @@ export default function Skills() {
       <Grid
         container
         spacing={3}
-        justifyContent="center"
+        justifyContent="space-evenly"
         alignItems="center"
         padding={4}
       >
-        {skills.map((skill) => {
+        {skills.map((skill, index) => {
           return (
-            <Grid item key={skill} xs={5} md={3}>
-              <Paper elevation={3} sx={{ minHeight: 20, color: "white" }}>
-                {skill}
-              </Paper>
+            <Grid
+              item
+              key={skill}
+              xs={5}
+              md={2}
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+              }}
+            >
+              <AnimatedSkillCard skill={skill} delay={index} />
             </Grid>
           );
         })}
