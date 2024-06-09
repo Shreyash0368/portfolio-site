@@ -5,6 +5,7 @@ const projects = [
       "A light weight online note taking and storage platform built using MERN stack. Uses MongoDB to store notes and user data which is displayed using React.js and Bootstrap with Bcrypt & JWT for user authentication.",
     image: { src: "images/idea-hub.png", alt: "idea-hub landing page" },
     youtube: "1M9vkPf95S8",
+    website: "https://666530e5aa320178f631d442--polite-sable-a4862c.netlify.app/",
     github: "https://github.com/Shreyash0368/Idea-Hub",
   },
   {
