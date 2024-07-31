@@ -30,7 +30,7 @@ export default function EducationTimeline() {
       <AnimatedTimelineItem
         direction={"left"}
         text={"X (93.2%)"}
-        oppText={"(2020 - 2021)"}
+        oppText={"(2018 - 2019)"}
         isLast={true}
       />
     </Timeline>
