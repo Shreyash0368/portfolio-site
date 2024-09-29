@@ -4,18 +4,16 @@ import AnimatedSkillCard from "../components/AnimatedSkillCard";
 
 const skills = [
   "Java",
-  "HTML",
-  "CSS",
-  "JS",
-  "React",
-  "MongoDB",
-  "Express",
-  "Nodejs",
-  "Material UI",
-  "Data Strucures ",
+  "HTML/CSS",
+  "Javascript",
+  "MERN Stack",
+  "Data Strucures",
   "Algorithms",
   "Redux",
   "Firebase",
+  "Vue3/Nuxt 3",
+  "Tailwind CSS",
+  "Jest"
 ];
 
 export default function Skills() {
