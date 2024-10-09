@@ -25,6 +25,14 @@ const projects = [
     github: "https://github.com/Shreyash0368/Excel-Clone",
     website: "https://shreyash0368.github.io/Excel-Clone/",
   },
+  {
+    title: "Easy Hire",
+    description:
+      "a streamlined hiring platform with Nuxt 3 and Tailwind CSS,  featuring a unified table to view all candidates, in-place attribute editing,  and drawers for detailed profile views. Designed to simplify the hiring  process and boost recruiter efficiency.",
+    image: { src: "images/easy-hire.png", alt: "Easy Hire Main Page" },
+    github: "https://github.com/Shreyash0368/easy-hire",
+    website: "https://main--easyhire12.netlify.app/",
+  }
 ];
 
 export default projects;

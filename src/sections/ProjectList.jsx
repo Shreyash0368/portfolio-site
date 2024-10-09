@@ -15,7 +15,7 @@ export default function ProjectList() {
       </Typography>
       <Grid
         container
-        spacing={3}
+        spacing={4}
         justifyContent="space-evenly"
         alignItems="center"
       >
@@ -24,7 +24,7 @@ export default function ProjectList() {
             <Grid
               item
               xs={12}
-              md={3}
+              md={4}
               key={project.title}
               style={{ display: "flex", justifyContent: "space-evenly" }}
             >

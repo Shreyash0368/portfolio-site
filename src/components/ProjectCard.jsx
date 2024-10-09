@@ -38,7 +38,7 @@ export default function ProjectCard({ project, delay = 0}) {
       }
       style={{ "--animation-delay": `${1500 + delay * 120}ms` }}
     >
-      <Card sx={{ maxWidth: 350, minWidth: 300 }}>
+      <Card sx={{ maxWidth: 350, minWidth: 350 }}>
         <CardMedia
           component="img"
           image={image.src}

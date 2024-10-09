@@ -13,7 +13,7 @@ const skills = [
   "Firebase",
   "Vue3/Nuxt 3",
   "Tailwind CSS",
-  "Jest"
+  "Google Cloud Platform"
 ];
 
 export default function Skills() {
