@@ -15,20 +15,20 @@ import {
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
-import LanguageIcon from '@mui/icons-material/Language';
+import LanguageIcon from "@mui/icons-material/Language";
 import useIntersectionObserver from "../hooks/intersectionObserver";
 
-export default function ProjectCard({ project, delay = 0}) {
-  const { title, description, image, github, video, youtube, website } = project;
+export default function ProjectCard({ project, delay = 0 }) {
+  const { title, description, image, github, video, youtube, website } =
+    project;
   const [isOpen, setIsOpen] = useState(false);
   const ytLink = `https://www.youtube.com/embed/${youtube}`;
   const ref = useRef(null);
-  const {isVisible} = useIntersectionObserver(ref);
+  const { isVisible } = useIntersectionObserver(ref);
 
   const handleImageClick = () => setIsOpen(true);
   const handleLightboxClose = () => setIsOpen(false);
   const handleLightboxOpen = () => setIsOpen(true);
-
 
   return (
     <div
@@ -61,24 +61,58 @@ export default function ProjectCard({ project, delay = 0}) {
           </Typography>
         </CardContent>
         <CardActions>
-          {github && <Link variant="button" href={github} target="_blank" sx={{ mx: 1.5 }}>
-            <GitHubIcon
-              fontSize="large"
-              sx={{ color: "white", "&:hover": { color: "text.light" } }}
-            />
-          </Link>}
-          {youtube && <Button onClick={handleLightboxOpen}>
-            <OndemandVideoIcon
-              fontSize="large"
-              sx={{ color: "white", "&:hover": { color: "text.light" } }}
-            />
-          </Button>}
-          {website && <Link variant="button" href={website} target="_blank" sx={{ mx: 1.5 }}>
-            <LanguageIcon
-              fontSize="large"
-              sx={{ color: "white", "&:hover": { color: "text.light" } }}
-            />
-          </Link>}
+          {github && (
+            <Link
+              variant="button"
+              href={github}
+              target="_blank"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <GitHubIcon
+                fontSize="large"
+                sx={{ color: "white", "&:hover": { color: "text.light" } }}
+              />
+            </Link>
+          )}
+          {youtube && (
+            <Button
+              onClick={handleLightboxOpen}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <OndemandVideoIcon
+                fontSize="large"
+                sx={{
+                  color: "white",
+                  "&:hover": { color: "text.light" },
+                }}
+              />
+            </Button>
+          )}
+          {website && (
+            <Link
+              variant="button"
+              href={website}
+              target="_blank"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <LanguageIcon
+                fontSize="large"
+                sx={{ color: "white", "&:hover": { color: "text.light" } }}
+              />
+            </Link>
+          )}
         </CardActions>
       </Card>
 
